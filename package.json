@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "ng lint --type-check",
     "e2e": "ng e2e",
     "predeploy": "ng build --prod --aot --base-href '/ngrx-playground-project/'",
     "deploy": "angular-cli-ghpages --repo=https://GH_TOKEN@github.com/bmvantunes/ngrx-playground-project.git --name='Bruno Antunes' --email=bmvantunes@gmail.com"

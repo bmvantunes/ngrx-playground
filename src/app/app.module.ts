@@ -1,27 +1,27 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 
-import { OneSmartComponent } from 'app/one-smart.component';
 import { AppComponent } from './app.component';
-import { metaReducers } from './meta.reducer';
-import { MultipleSmartComponent } from './multiple-smart.component';
-import { OneDummyComponent } from './one-dummy.component';
-import { counterArrayReducer, counterReducer } from './reducer';
+import { CounterModule } from './counter/counter.module';
+import { metaReducers } from './shared/meta.reducer';
 
 @NgModule({
   declarations: [
-    OneDummyComponent,
-    OneSmartComponent,
-    MultipleSmartComponent,
     AppComponent
   ],
   imports: [
+    CounterModule,
     BrowserModule,
-    StoreModule.forRoot({
-      counter: counterReducer,
-      counterArray: counterArrayReducer
-    }, { metaReducers })
+    RouterModule.forRoot([
+      { path: '', redirectTo: '/counter', pathMatch: 'full' },
+      {
+        path: 'counter',
+        loadChildren: './counter/counter.module#CounterModule',
+      },
+    ]),
+    StoreModule.forRoot([], { metaReducers })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -37,7 +37,7 @@
     "@types/node": "~8.0.24",
     "angular-cli-ghpages": "^0.5.1",
     "codelyzer": "~3.1.2",
-    "jasmine-core": "~2.7.0",
+    "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.0",
     "karma-chrome-launcher": "~2.2.0",
